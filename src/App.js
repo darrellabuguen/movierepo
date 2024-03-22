@@ -1,3 +1,5 @@
+import Categories from './pages/Categories';
+import MovieInfo from './pages/MovieInfo';
 import About from './pages/About';
 import Movies from './components/Movies';
 import Home from './pages/Home';
@@ -10,14 +12,14 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <header>
-          <Navigation />
-        </header>
+        <Navigation />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/movies" element={<Movies />} />
           <Route exact path='/result/:mvname' element={<Result />} />
+          <Route exact path='/movies/movieinfo/:movieid' element={<MovieInfo />} />
+          <Route exact path='/categories/:category' element={<Categories />} />
         </Routes>
       </Router>
     </div>
