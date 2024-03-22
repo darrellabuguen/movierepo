@@ -12,6 +12,7 @@ import {
     XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import Search from "./Search";
 
 const products = [
     { name: 'Analytics', description: 'Get a better understanding of your traffic', icon: ChartPieIcon },
@@ -33,18 +34,19 @@ function Navigation() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
-        <header className="bg-white">
+        <header className="bg-orange-500 text-white">
             <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-                <div className="flex lg:flex-1">
+                <div className="flex">
                     <Link to="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">MovieRepo</span>
                         <FaPhotoFilm />
                     </Link>
                 </div>
+                <Search />
                 <div className="flex lg:hidden">
                     <button
                         type="button"
-                        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+                        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
                         onClick={() => setMobileMenuOpen(true)}
                     >
                         <span className="sr-only">Open main menu</span>
@@ -53,9 +55,9 @@ function Navigation() {
                 </div>
                 <Popover.Group className="hidden lg:flex lg:gap-x-12">
                     <Popover className="relative">
-                        <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+                        <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6">
                             Categories
-                            <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
+                            <ChevronDownIcon className="h-5 w-5 flex-none" aria-hidden="true" />
                         </Popover.Button>
 
                         <Transition
@@ -103,18 +105,18 @@ function Navigation() {
                         </Transition>
                     </Popover>
 
-                    <Link to="/" className="text-sm font-semibold leading-6 text-gray-900">
+                    <Link to="/" className="text-sm font-semibold leading-6">
                         Home
                     </Link>
-                    <Link to="/about" className="text-sm font-semibold leading-6 text-gray-900">
+                    <Link to="/about" className="text-sm font-semibold leading-6">
                         About
                     </Link>
-                    <Link to="/movies" className="text-sm font-semibold leading-6 text-gray-900">
+                    <Link to="/movies" className="text-sm font-semibold leading-6">
                         Movies
                     </Link>
                 </Popover.Group>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <Link to="#" className="text-sm font-semibold leading-6 text-gray-900">
+                    <Link to="#" className="text-sm font-semibold leading-6">
                         Log in <span aria-hidden="true">&rarr;</span>
                     </Link>
                 </div>
@@ -125,11 +127,7 @@ function Navigation() {
                     <div className="flex items-center justify-between">
                         <Link to="/" className="-m-1.5 p-1.5">
                             <span className="sr-only">MovieRepo</span>
-                            <img
-                                className="h-8 w-auto"
-                                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                                alt=""
-                            />
+                            <FaPhotoFilm />
                         </Link>
                         <button
                             type="button"
