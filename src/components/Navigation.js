@@ -35,7 +35,7 @@ function Navigation() {
 
     return (
         <header className="bg-orange-500 text-white">
-            <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+            <nav className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8" aria-label="Global">
                 <div className="flex">
                     <Link to="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">MovieRepo</span>
@@ -123,7 +123,7 @@ function Navigation() {
             </nav>
             <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
                 <div className="fixed inset-0 z-10" />
-                <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-5 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div className="flex items-center justify-between">
                         <Link to="/" className="-m-1.5 p-1.5">
                             <span className="sr-only">MovieRepo</span>
@@ -153,14 +153,15 @@ function Navigation() {
                                             </Disclosure.Button>
                                             <Disclosure.Panel className="mt-2 space-y-2">
                                                 {[...products, ...callsToAction].map((item) => (
-                                                    <Disclosure.Button
+                                                    <Link
                                                         key={item.name}
                                                         as="a"
-                                                        href={item.href}
+                                                        to={`categories/${item.name}`}
                                                         className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                                        onClick={() => setMobileMenuOpen(false)}
                                                     >
                                                         {item.name}
-                                                    </Disclosure.Button>
+                                                    </Link>
                                                 ))}
                                             </Disclosure.Panel>
                                         </>
@@ -169,18 +170,21 @@ function Navigation() {
                                 <Link
                                     to="/"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                    onClick={() => setMobileMenuOpen(false)}
                                 >
                                     Home
                                 </Link>
                                 <Link
                                     to="/about"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                    onClick={() => setMobileMenuOpen(false)}
                                 >
                                     About
                                 </Link>
                                 <Link
                                     to="/movies"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                    onClick={() => setMobileMenuOpen(false)}
                                 >
                                     Movies
                                 </Link>
@@ -189,6 +193,7 @@ function Navigation() {
                                 <Link
                                     to="#"
                                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                    onClick={() => setMobileMenuOpen(false)}
                                 >
                                     Log in
                                 </Link>
