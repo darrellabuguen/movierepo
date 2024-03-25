@@ -39,7 +39,7 @@ function Navigation() {
                 <div className="flex">
                     <Link to="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">MovieRepo</span>
-                        <FaPhotoFilm fill="#0F8BE6" />
+                        <FaPhotoFilm className="fill-blue-500" />
                     </Link>
                 </div>
                 <Search />
@@ -77,7 +77,7 @@ function Navigation() {
                                             className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
                                         >
                                             <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                                                <item.icon className="h-6 w-6 text-gray-600 group-hover:text-blue-600" aria-hidden="true" />
+                                                <item.icon className="h-6 w-6 text-gray-600 group-hover:text-blue-500" aria-hidden="true" />
                                             </div>
                                             <div className="flex-auto">
                                                 <Link to={`/categories/${item.name}`} className="block font-semibold text-gray-900">
@@ -116,7 +116,7 @@ function Navigation() {
                     </Link>
                 </Popover.Group>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <Link to="#" className="text-sm font-semibold leading-6" style={{ color: '#0F8BE6' }}>
+                    <Link to="#" className="text-sm font-semibold leading-6 text-blue-500">
                         Log in <span aria-hidden="true">&rarr;</span>
                     </Link>
                 </div>

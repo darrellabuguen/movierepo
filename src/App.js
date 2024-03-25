@@ -1,7 +1,7 @@
 import Categories from './pages/Categories';
-import MovieInfo from './pages/MovieInfo';
+import MovieInfo from './components/MovieInfo';
 import About from './pages/About';
-import Movies from './components/Movies';
+import Movies from './pages/Movies';
 import Home from './pages/Home';
 import Navigation from './components/Navigation';
 import './index.css';
