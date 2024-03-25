@@ -10,7 +10,7 @@ import Result from './pages/Result';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App text-white">
       <Router>
         <Navigation />
         <Routes>

@@ -15,8 +15,15 @@ const Search = () => {
                 placeholder='Search'
                 id='srch'
                 required
-                className='h-8 rounded-l-md px-2 text-black outline-none bg-orange-400 focus:bg-white
-                placeholder:text-white w-full focus:placeholder:text-zinc-700'
+                className='h-8 rounded-l-md px-2 w-full text-black'
+                onMouseOver={() => {
+                    var srch = document.getElementById("srch");
+                    srch.style.outline = '#0F8BE6 3px solid';
+                }}
+                onMouseLeave={() => {
+                    var srch = document.getElementById("srch");
+                    srch.style.outline = 'none';
+                }}
             />
             <button
                 onClick={() => {
