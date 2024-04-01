@@ -13,7 +13,7 @@ const Topweek = () => {
             <Splide
                 options={{
                     perPage: 4,
-                    gap: 30,
+                    gap: "1.5rem",
                     drag: "free"
                 }}
             >
