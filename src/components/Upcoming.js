@@ -7,20 +7,24 @@ const Upcoming = () => {
         <div>
             <Splide
                 options={{
-                    pagination: false
+                    pagination: true,
+                    rewind: true,
+                    autoplay: true,
+                    pause: false,
+                    interval: 6000
                 }}
             >
                 <SplideSlide>
-                    <img src="./src/images/2147803976.jpg" alt='img' className='h-full' />
+                    <img src="./src/images/2147803976.jpg" alt='img' className=' h-full w-full' />
                 </SplideSlide>
                 <SplideSlide>
-                    <img src="./src/images/2148470173.jpg" alt='img' />
+                    <img src="./src/images/2148470173.jpg" alt='img' className=' h-full w-full' />
                 </SplideSlide>
                 <SplideSlide>
-                    <img src="./src/images/copy-space-movie-time-with-popcorn.jpg" alt='img' />
+                    <img src="./src/images/copy-space-movie-time-with-popcorn.jpg" alt='img' className=' h-full w-full' />
                 </SplideSlide>
                 <SplideSlide>
-                    <img src="./src/images/pxfuel.jpg" alt='img' />
+                    <img src="./src/images/pxfuel.jpg" alt='img' className=' h-full w-full' />
                 </SplideSlide>
             </Splide>
         </div>
