@@ -1,37 +1,11 @@
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import "@splidejs/splide/dist/css/splide.min.css";
-import React, { useEffect, useState } from 'react'
+import useLayout from './useLayout';
 
-const Trending = () => {
+const Random = () => {
     const img_src = ['./src/images/2147803976.jpg', './src/images/2148470173.jpg', './src/images/copy-space-movie-time-with-popcorn.jpg', './src/images/pxfuel.jpg', './src/images/2147803976.jpg', './src/images/2148470173.jpg', './src/images/copy-space-movie-time-with-popcorn.jpg', './src/images/pxfuel.jpg'];
-    const [contWidth, setWidth] = useState("");
-    const [item_gap, setGap] = useState("");
+    const { contWidth, contHeight, item_gap } = useLayout();
     var ex_id = 0;
-
-    const setWidthAndGap = (width) => {
-        let widthh, gap;
-        if (width < 750) {
-            widthh = "8rem";
-            gap = "0.2rem";
-        } else {
-            widthh = "15rem";
-            gap = "1.5rem";
-        }
-        setWidth(widthh);
-        setGap(gap);
-    };
-
-    const checkScreen = () => {
-        const { innerWidth } = window;
-        setWidthAndGap(innerWidth);
-    };
-
-    useEffect(() => {
-        checkScreen();
-        window.addEventListener('resize', checkScreen);
-        return () => window.removeEventListener('resize', checkScreen);
-    });
-
 
     return (
         <div className='my-3'>
@@ -55,7 +29,8 @@ const Trending = () => {
                         <SplideSlide key={ex_id}>
                             <div className='container'
                                 style={{
-                                    width: contWidth
+                                    width: contWidth,
+                                    height: contHeight
                                 }}
                             >
                                 <img src={image} alt='img' className='h-full max-md:w-64' />
@@ -73,4 +48,4 @@ const Trending = () => {
     )
 }
 
-export default Trending
+export default Random
