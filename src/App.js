@@ -1,6 +1,6 @@
 import Categories from './pages/Categories';
 import MovieInfo from './components/MovieInfo';
-import About from './pages/About';
+import People from './pages/People';
 import Movies from './pages/Movies';
 import Home from './pages/Home';
 import Navigation from './components/Navigation';
@@ -15,7 +15,7 @@ function App() {
         <Navigation />
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/about" element={<About />} />
+          <Route exact path="/people" element={<People />} />
           <Route exact path="/movies" element={<Movies />} />
           <Route exact path='/result/:mvname' element={<Result />} />
           <Route exact path='/movies/movieinfo/:movieid' element={<MovieInfo />} />

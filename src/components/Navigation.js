@@ -108,11 +108,11 @@ function Navigation() {
                     <Link to="/" className="text-sm font-semibold leading-6">
                         Home
                     </Link>
-                    <Link to="/about" className="text-sm font-semibold leading-6">
-                        About
-                    </Link>
                     <Link to="/movies" className="text-sm font-semibold leading-6">
                         Movies
+                    </Link>
+                    <Link to="/people" className="text-sm font-semibold leading-6">
+                        People
                     </Link>
                 </Popover.Group>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -175,18 +175,18 @@ function Navigation() {
                                     Home
                                 </Link>
                                 <Link
-                                    to="/about"
-                                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                    onClick={() => setMobileMenuOpen(false)}
-                                >
-                                    About
-                                </Link>
-                                <Link
                                     to="/movies"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
                                     Movies
+                                </Link>
+                                <Link
+                                    to="/people"
+                                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                >
+                                    People
                                 </Link>
                             </div>
                             <div className="py-6">
