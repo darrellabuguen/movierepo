@@ -1,4 +1,5 @@
 import React from 'react'
+import Random from '../components/Random';
 
 const Movies = () => {
     const img_src = ['./src/images/2147803976.jpg', './src/images/2148470173.jpg', './src/images/copy-space-movie-time-with-popcorn.jpg', './src/images/pxfuel.jpg', './src/images/2147803976.jpg', './src/images/2148470173.jpg', './src/images/copy-space-movie-time-with-popcorn.jpg', './src/images/pxfuel.jpg'];
@@ -19,6 +20,7 @@ const Movies = () => {
                     )
                 })}
             </div>
+            <Random />
         </div>
     )
 }

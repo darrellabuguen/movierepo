@@ -2,28 +2,24 @@ import { Link } from "react-router-dom"
 import { FaPhotoFilm } from "react-icons/fa6";
 import { Fragment, useState } from 'react'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
+import { PiTelevision, PiTrophy, PiFilmReel } from "react-icons/pi";
+import { IoTicketOutline } from "react-icons/io5";
 import {
-    ArrowPathIcon,
     Bars3Icon,
-    ChartPieIcon,
-    CursorArrowRaysIcon,
-    FingerPrintIcon,
-    SquaresPlusIcon,
     XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import Search from "./Search";
 
 const products = [
-    { name: 'Analytics', description: 'Get a better understanding of your traffic', icon: ChartPieIcon },
-    { name: 'Engagement', description: 'Speak directly to your customers', icon: CursorArrowRaysIcon },
-    { name: 'Security', description: 'Your customers’ data will be safe and secure', icon: FingerPrintIcon },
-    { name: 'Integrations', description: 'Connect with third-party tools', icon: SquaresPlusIcon },
-    { name: 'Automations', description: 'Build strategic funnels that will convert', icon: ArrowPathIcon },
+    { name: 'Top Rated', description: 'List of top rated movies', icon: PiTrophy },
+    { name: 'TV', description: 'Get latest TV shows from your country', icon: PiTelevision },
+    { name: 'Upcoming', description: 'Get movies that will be realeased soon', icon: PiFilmReel },
+    { name: 'Now Playing', description: 'Movies that are curretly in cinemas', icon: IoTicketOutline }
 ]
 const callsToAction = [
     { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-    { name: 'Contact sales', href: '#', icon: PhoneIcon },
+    { name: 'Contact us', href: '#', icon: PhoneIcon },
 ]
 
 function classNames(...classes) {
@@ -56,7 +52,7 @@ function Navigation() {
                 <Popover.Group className="hidden lg:flex lg:gap-x-12">
                     <Popover className="relative">
                         <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6">
-                            Categories
+                            Discover
                             <ChevronDownIcon className="h-5 w-5 flex-none" aria-hidden="true" />
                         </Popover.Button>
 
@@ -145,7 +141,7 @@ function Navigation() {
                                     {({ open }) => (
                                         <>
                                             <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                                                Categories
+                                                Discover
                                                 <ChevronDownIcon
                                                     className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
                                                     aria-hidden="true"
