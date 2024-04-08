@@ -3,7 +3,14 @@ import Random from '../components/Random';
 import useFetch from '../components/useFetch'
 
 const Movies = () => {
-    const { data, error, loading } = useFetch(`https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1`);
+    const options = {
+        method: `GET`,
+        headers: {
+            accept: 'application/json',
+            Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
+        }
+    };
+    const { data, error, loading } = useFetch(`https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1`, options);
 
     return (
         <div

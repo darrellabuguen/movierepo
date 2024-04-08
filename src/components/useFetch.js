@@ -1,19 +1,13 @@
 import { useState, useEffect } from "react"
 
-const useFetch = (url) => {
+const useFetch = (url, options) => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
         const abortCont = new AbortController();
-        const options = {
-            method: 'GET',
-            headers: {
-                accept: 'application/json',
-                Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
-            }
-        };
+
         setTimeout(() => {
             fetch(url, options, { signal: abortCont.signal })
                 .then(res => {
@@ -38,7 +32,7 @@ const useFetch = (url) => {
 
             return () => abortCont.abort();
         }, 1000);
-    }, [url]);
+    }, [url, options]);
 
     return { data, loading, error }
 }
