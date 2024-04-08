@@ -4,12 +4,18 @@ const useFetch = (url) => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const options = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
+        }
+    };
 
     useEffect(() => {
         const abortCont = new AbortController();
-
         setTimeout(() => {
-            fetch(url, { signal: abortCont.signal })
+            fetch(url, options, { signal: abortCont.signal })
                 .then(res => {
                     if (!res.ok) {
                         throw Error('Could not fetch the data from the server')
@@ -29,9 +35,9 @@ const useFetch = (url) => {
                         setError(err.message);
                     }
                 });
-        }, 1000);
 
-        return () => abortCont.abort();
+            return () => abortCont.abort();
+        }, 1000);
     }, [url]);
 
     return { data, loading, error }
