@@ -15,11 +15,9 @@ const useLayout = () => {
             widthh = "15rem";
             gap = "1.5rem";
         }
-        setTimeout(() => {
-            setWidth(widthh);
-            setHeight(heightt);
-            setGap(gap);
-        }, 1000);
+        setWidth(widthh);
+        setHeight(heightt);
+        setGap(gap);
     };
 
     const checkScreen = () => {

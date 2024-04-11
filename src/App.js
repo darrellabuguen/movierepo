@@ -12,6 +12,7 @@ import { IoIosArrowUp } from "react-icons/io";
 
 function App() {
   const [goToTop, showTop] = useState(false);
+
   useEffect(() => {
     window.addEventListener('scroll', () => {
       var scrolled = window.scrollY;
@@ -22,6 +23,7 @@ function App() {
       }
     });
   })
+
   return (
     <div className="App text-white">
       <Router>
