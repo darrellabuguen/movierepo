@@ -76,7 +76,9 @@ function Navigation() {
                                                 <item.icon className="h-6 w-6 text-gray-600 group-hover:text-blue-500" aria-hidden="true" />
                                             </div>
                                             <div className="flex-auto">
-                                                <Link to={`/categories/${item.name}`} className="block font-semibold text-gray-900">
+                                                <Link to={
+                                                    item.name == "TV" ? `discover/tv/${item.name}` : `/discover/${item.name}`
+                                                } className="block font-semibold text-gray-900">
                                                     {item.name}
                                                     <span className="absolute inset-0" />
                                                 </Link>
@@ -89,7 +91,9 @@ function Navigation() {
                                     {callsToAction.map((item) => (
                                         <Link
                                             key={item.name}
-                                            to={`/categories/${item.name}`}
+                                            to={
+                                                item.name == "TV" ? `discover/tv/${item.name}` : `/discover/${item.name}`
+                                            }
                                             className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
                                         >
                                             <item.icon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
@@ -152,7 +156,7 @@ function Navigation() {
                                                     <Link
                                                         key={item.name}
                                                         as="a"
-                                                        to={`categories/${item.name}`}
+                                                        to={`/discover/${item.name}`}
                                                         className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                                         onClick={() => setMobileMenuOpen(false)}
                                                     >

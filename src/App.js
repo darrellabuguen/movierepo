@@ -1,4 +1,4 @@
-import Categories from './pages/Categories';
+import Discover from './pages/Discover';
 import MovieInfo from './pages/MovieInfo';
 import People from './pages/People';
 import Movies from './pages/Movies';
@@ -10,6 +10,8 @@ import Result from './pages/Result';
 import React, { useEffect, useState } from 'react';
 import { IoIosArrowUp } from "react-icons/io";
 import CelebrityInfo from './pages/CelebrityInfo';
+import Tv from './pages/Tv';
+import TvInfo from './pages/TvInfo';
 
 function App() {
   const [goToTop, showTop] = useState(false);
@@ -35,8 +37,10 @@ function App() {
           <Route exact path="/movies" element={<Movies />} />
           <Route exact path='/result/:mvname' element={<Result />} />
           <Route exact path='/movies/movieinfo/:movieid' element={<MovieInfo />} />
-          <Route exact path='/categories/:category' element={<Categories />} />
+          <Route exact path='/discover/:discover?' element={<Discover />} />
           <Route exact path='/people/:celebname/:celebid' element={<CelebrityInfo />} />
+          <Route exact path='/discover/tv/:tv' element={<Tv />} />
+          <Route exact path='/tv/tvinfo/:tvid' element={<TvInfo />} />
         </Routes>
       </Router>
       {goToTop && (
