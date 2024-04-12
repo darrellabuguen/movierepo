@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Result from './pages/Result';
 import React, { useEffect, useState } from 'react';
 import { IoIosArrowUp } from "react-icons/io";
+import CelebrityInfo from './components/CelebrityInfo';
 
 function App() {
   const [goToTop, showTop] = useState(false);
@@ -35,6 +36,7 @@ function App() {
           <Route exact path='/result/:mvname' element={<Result />} />
           <Route exact path='/movies/movieinfo/:movieid' element={<MovieInfo />} />
           <Route exact path='/categories/:category' element={<Categories />} />
+          <Route exact path='/people/:celebname/:celebid' element={<CelebrityInfo />} />
         </Routes>
       </Router>
       {goToTop && (

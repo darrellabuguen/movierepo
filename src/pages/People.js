@@ -1,9 +1,9 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
 import useFetch from '../components/useFetch'
+import { useNavigate } from 'react-router-dom'
 
 const About = () => {
-    //const navigate = useParams();
+    const navigate = useNavigate();
     const { data, error, loading } = useFetch('https://api.themoviedb.org/3/person/popular?language=en-US&page=1', "GET");
     return (
         <div
@@ -21,9 +21,9 @@ const About = () => {
                                     <div
                                         key={person.id}
                                         className='container flex flex-col justify-center items-center text-center cursor-pointer'
-                                    // onClick={() => {
-                                    //     navigate(`/movies/movieinfo/${person.id}`);
-                                    // }}
+                                        onClick={() => {
+                                            navigate(`/people/${person.original_name}/${person.id}`);
+                                        }}
                                     >
                                         <img src={"https://image.tmdb.org/t/p/w500/" + person.profile_path} alt='img' className='h-full' />
                                         <p>{person.original_name}</p>
