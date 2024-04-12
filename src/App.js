@@ -1,5 +1,5 @@
 import Categories from './pages/Categories';
-import MovieInfo from './components/MovieInfo';
+import MovieInfo from './pages/MovieInfo';
 import People from './pages/People';
 import Movies from './pages/Movies';
 import Home from './pages/Home';
@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Result from './pages/Result';
 import React, { useEffect, useState } from 'react';
 import { IoIosArrowUp } from "react-icons/io";
-import CelebrityInfo from './components/CelebrityInfo';
+import CelebrityInfo from './pages/CelebrityInfo';
 
 function App() {
   const [goToTop, showTop] = useState(false);

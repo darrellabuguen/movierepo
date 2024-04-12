@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import useFetch from './useFetch';
+import useFetch from '../components/useFetch';
 
 const MovieInfo = () => {
     const { movieid } = useParams();
