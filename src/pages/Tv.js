@@ -7,7 +7,26 @@ const Tv = () => {
     const { data, loading, error } = useFetch('https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc', "GET");
     return (
         <div className='mx-auto max-w-7xl  p-6 lg:px-8'>
-            {loading && <div>Loading...</div>}
+            {loading &&
+                <div className='animate-pulse grid grid-cols-4 gap-4 max-md:grid-cols-3 max-sm:gap-2 max-sm:grid-cols-2'>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                </div>
+            }
             {error && <div>{error}</div>}
             {data && (
                 <>

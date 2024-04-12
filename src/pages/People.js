@@ -9,7 +9,26 @@ const About = () => {
         <div
             className='mx-auto max-w-7xl  p-6 lg:px-8'
         >
-            {loading && <div>Loading...</div>}
+            {loading &&
+                <div className='animate-pulse grid grid-cols-4 gap-4 max-md:grid-cols-3 max-sm:gap-2 max-sm:grid-cols-2'>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
+                </div>
+            }
             {error && <div>{error}</div>}
             {data && (
                 <>
