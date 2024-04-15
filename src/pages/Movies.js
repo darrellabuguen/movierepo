@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import Random from '../components/Random';
 import useFetch from '../components/useFetch'
+import Loading from '../components/Loading';
 
 const Movies = () => {
     const navigate = useNavigate();
@@ -22,24 +23,7 @@ const Movies = () => {
                 })}
             </div> */}
             {loading &&
-                <div className='animate-pulse grid grid-cols-4 gap-4 max-md:grid-cols-3 max-sm:gap-2 max-sm:grid-cols-2'>
-                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
-                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
-                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
-                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
-                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
-                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
-                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
-                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
-                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
-                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
-                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
-                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
-                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
-                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
-                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
-                    <div className='lg:h-96 sm:h-72 min-h-60 bg-gray-300'></div>
-                </div>
+                <Loading />
             }
             {error && <div>{error}</div>}
             {data && (
