@@ -5,7 +5,7 @@ import Loading from '../components/Loading';
 
 const Tv = () => {
     const navigate = useNavigate();
-    const { data, loading, error } = useFetch('https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc', "GET");
+    const { data, loading, error } = useFetch('https://api.themoviedb.org/3/trending/tv/day?language=en-US', "GET");
     return (
         <div className='mx-auto max-w-7xl  p-6 lg:px-8'>
             {loading &&
@@ -27,7 +27,7 @@ const Tv = () => {
                                         }}
                                     >
                                         <img src={"https://image.tmdb.org/t/p/w500/" + telev.poster_path} alt='img' className='h-full' />
-                                        <p>{telev.original_name}</p>
+                                        <p>{telev.name}</p>
                                     </div>
                                 )
                             })

@@ -13,7 +13,7 @@ import Search from "./Search";
 
 const products = [
     { name: 'Top Rated', description: 'List of top rated movies', icon: PiTrophy },
-    { name: 'TV', description: 'Get latest TV shows from your country', icon: PiTelevision },
+    { name: 'TV', description: 'Discover what is trend on TV today', icon: PiTelevision },
     { name: 'Upcoming', description: 'Get movies that will be realeased soon', icon: PiFilmReel },
     { name: 'Now Playing', description: 'Movies that are curretly in cinemas', icon: IoTicketOutline }
 ]
