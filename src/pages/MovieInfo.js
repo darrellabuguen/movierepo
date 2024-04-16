@@ -12,7 +12,7 @@ const MovieInfo = () => {
             {loading && <div>Getting movie info...</div>}
             {data && (
                 <>
-                    <h1 className=' text-2xl'>{data.original_title}</h1>
+                    <h1 className=' text-2xl'>{data.title}</h1>
                     <div>
                         <img src={"https://image.tmdb.org/t/p/original/" + data.backdrop_path} alt='img' className='h-full' />
                         <div>

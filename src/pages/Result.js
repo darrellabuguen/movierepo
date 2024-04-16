@@ -23,13 +23,14 @@ const Result = () => {
                             data.results.map(movie => {
                                 const type = movie.media_type;
                                 var img_src = type === "person" ? movie.profile_path : movie.poster_path;
-                                var img_title = type === "person" ? movie.original_name : movie.original_title;
+                                var img_title = type === "movie" ? movie.title : movie.name;
+                                var location = type === "person" ? `/people/${movie.name}/${movie.id}` : type === "tv" ? `/tv/tvinfo/${movie.id}` : `/movies/movieinfo/${movie.id}`;
                                 return (
                                     <div
                                         key={movie.id}
                                         className='container flex flex-col justify-center items-center text-center cursor-pointer'
                                         onClick={() => {
-                                            navigate(`/search_info/${movie.id}`);
+                                            navigate(location);
                                         }}
                                     >
                                         <img src={"https://image.tmdb.org/t/p/w500/" + img_src} alt='img' className='h-full' />
