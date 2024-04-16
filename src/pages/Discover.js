@@ -31,7 +31,6 @@ const Categories = () => {
                                         }}
                                     >
                                         <img src={"https://image.tmdb.org/t/p/w500/" + movie.poster_path} alt='img' className='h-full' />
-                                        <p>{movie.original_title}</p>
                                     </div>
                                 )
                             })

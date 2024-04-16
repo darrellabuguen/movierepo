@@ -1,7 +1,5 @@
 import Discover from './pages/Discover';
 import MovieInfo from './pages/MovieInfo';
-import People from './pages/People';
-import Movies from './pages/Movies';
 import Home from './pages/Home';
 import Navigation from './components/Navigation';
 import './index.css';
@@ -12,6 +10,7 @@ import { IoIosArrowUp } from "react-icons/io";
 import CelebrityInfo from './pages/CelebrityInfo';
 import Tv from './pages/Tv';
 import TvInfo from './pages/TvInfo';
+import Info from './pages/Info';
 
 function App() {
   const [goToTop, showTop] = useState(false);
@@ -33,8 +32,7 @@ function App() {
         <Navigation />
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/people" element={<People />} />
-          <Route exact path="/movies" element={<Movies />} />
+          <Route exact path="/trending/:trendings" element={<Info />} />
           <Route exact path='/result/:mvname' element={<Result />} />
           <Route exact path='/movies/movieinfo/:movieid' element={<MovieInfo />} />
           <Route exact path='/discover/:discover?' element={<Discover />} />

@@ -27,7 +27,6 @@ const Tv = () => {
                                         }}
                                     >
                                         <img src={"https://image.tmdb.org/t/p/w500/" + telev.poster_path} alt='img' className='h-full' />
-                                        <p>{telev.name}</p>
                                     </div>
                                 )
                             })

@@ -108,10 +108,10 @@ function Navigation() {
                     <Link to="/" className="text-sm font-semibold leading-6">
                         Home
                     </Link>
-                    <Link to="/movies" className="text-sm font-semibold leading-6">
+                    <Link to={`/trending/movie`} className="text-sm font-semibold leading-6">
                         Movies
                     </Link>
-                    <Link to="/people" className="text-sm font-semibold leading-6">
+                    <Link to={`/trending/person`} className="text-sm font-semibold leading-6">
                         People
                     </Link>
                 </Popover.Group>
@@ -177,14 +177,14 @@ function Navigation() {
                                     Home
                                 </Link>
                                 <Link
-                                    to="/movies"
+                                    to={`/trending/movie`}
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
                                     Movies
                                 </Link>
                                 <Link
-                                    to="/people"
+                                    to={`/trending/person`}
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
