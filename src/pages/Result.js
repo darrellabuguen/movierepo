@@ -35,6 +35,7 @@ const Result = () => {
                                     >
                                         <img src={"https://image.tmdb.org/t/p/w500/" + img_src} alt='img' className='h-full' />
                                         <p>{img_title}</p>
+                                        <p>{type}</p>
                                     </div>
                                 )
                             })

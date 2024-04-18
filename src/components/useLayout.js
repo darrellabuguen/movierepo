@@ -1,28 +1,21 @@
 import { useEffect, useState } from 'react'
 
 const useLayout = () => {
-    const [contWidth, setWidth] = useState("");
-    const [contHeight, setHeight] = useState("");
-    const [item_gap, setGap] = useState("");
+    const [contPage, setPage] = useState("");
 
-    const setWidthAndGap = (width) => {
-        let widthh, heightt, gap;
-        if (width < 750) {
-            widthh = "8rem";
-            heightt = "10rem";
-            gap = "0.2rem";
+    const setPageNum = (width) => {
+        let page;
+        if (width < 1300) {
+            page = "1";
         } else {
-            widthh = "15rem";
-            gap = "1.5rem";
+            page = "4";
         }
-        setWidth(widthh);
-        setHeight(heightt);
-        setGap(gap);
+        setPage(page);
     };
 
     const checkScreen = () => {
         const { innerWidth } = window;
-        setWidthAndGap(innerWidth);
+        setPageNum(innerWidth);
     };
 
     useEffect(() => {
@@ -31,7 +24,7 @@ const useLayout = () => {
         return () => window.removeEventListener('resize', checkScreen);
     });
 
-    return { contWidth, contHeight, item_gap };
+    return { contPage };
 }
 
 export default useLayout

@@ -1,11 +1,14 @@
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import "@splidejs/splide/dist/css/splide.min.css";
+import useFetch from './useFetch';
+import { useNavigate } from 'react-router-dom';
+import Loading from './Loading';
 import useLayout from './useLayout';
 
 const Trending = () => {
-    const img_src = ['./src/images/2147803976.jpg', './src/images/2148470173.jpg', './src/images/copy-space-movie-time-with-popcorn.jpg', './src/images/pxfuel.jpg', './src/images/2147803976.jpg', './src/images/2148470173.jpg', './src/images/copy-space-movie-time-with-popcorn.jpg', './src/images/pxfuel.jpg'];
-    const { contWidth, contHeight, item_gap } = useLayout();
-    var ex_id = 0;
+    const navigate = useNavigate();
+    const { data, loading, error } = useFetch(`https://api.themoviedb.org/3/trending/movie/day?language=en-US`, "GET");
+    const { contPage } = useLayout();
 
     return (
         <div className='my-3'>
@@ -14,36 +17,44 @@ const Trending = () => {
             >
                 Trending Now
             </h1>
-            <Splide
-                options={{
-                    autoWidth: true,
-                    gap: item_gap,
-                    drag: "free",
-                    pagination: false,
-                    snap: true,
-                }}
-            >
-                {img_src.map(image => {
-                    ex_id++;
-                    return (
-                        <SplideSlide key={ex_id}>
-                            <div className='container'
-                                style={{
-                                    width: contWidth,
-                                    height: contHeight
-                                }}
-                            >
-                                <img src={image} alt='img' className='h-full max-md:w-64' />
-                            </div>
-                        </SplideSlide>
-                    )
-                })}
-            </Splide>
-            <div className='text-right text-blue-500'>
-                <button>
-                    View more
-                </button>
-            </div>
+            {error && <div>{error}</div>}
+            {
+                loading &&
+                <Loading />
+            }
+            {data &&
+                <>
+                    <Splide
+                        options={{
+                            autoWidth: true,
+                            gap: "0.5rem",
+                            drag: "free",
+                            pagination: false,
+                            snap: true,
+                            perPage: contPage
+                        }}
+                    >
+                        {data.results.map(image => {
+                            return (
+                                <SplideSlide key={image.id}>
+                                    <div className='container w-full cursor-pointer'
+                                        onClick={() => {
+                                            navigate(`/movies/movieinfo/${image.id}`)
+                                        }}
+                                    >
+                                        <img src={"https://image.tmdb.org/t/p/w300/" + image.poster_path} alt='img' className='h-full max-md:w-64' />
+                                    </div>
+                                </SplideSlide>
+                            )
+                        })}
+                    </Splide>
+                    <div className='text-right text-blue-500'>
+                        <button>
+                            View more
+                        </button>
+                    </div>
+                </>
+            }
         </div >
     )
 }
