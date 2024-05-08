@@ -25,19 +25,23 @@ const Result = () => {
                                 var img_src = type === "person" ? movie.profile_path : movie.poster_path;
                                 var img_title = type === "movie" ? movie.title : movie.name;
                                 var location = type === "person" ? `/people/${movie.name}/${movie.id}` : type === "tv" ? `/tv/tvinfo/${movie.id}` : `/movies/movieinfo/${movie.id}`;
-                                return (
-                                    <div
-                                        key={movie.id}
-                                        className='container flex flex-col justify-center items-center text-center cursor-pointer'
-                                        onClick={() => {
-                                            navigate(location);
-                                        }}
-                                    >
-                                        <img src={"https://image.tmdb.org/t/p/w500/" + img_src} alt='img' className='h-full' />
-                                        <p>{img_title}</p>
-                                        <p>{type}</p>
-                                    </div>
-                                )
+                                if (img_src) {
+                                    return (
+                                        <div
+                                            key={movie.id}
+                                            className='container flex flex-col justify-center items-center text-center cursor-pointer'
+                                            onClick={() => {
+                                                navigate(location);
+                                            }}
+                                        >
+                                            <img src={"https://image.tmdb.org/t/p/w500/" + img_src} alt='img' className='h-full' />
+                                            <p>{img_title}</p>
+                                            <p>{type}</p>
+                                        </div>
+                                    )
+                                } else {
+                                    return null;
+                                }
                             })
                         }
                     </div>
